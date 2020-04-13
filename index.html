@@ -9,23 +9,27 @@
 	<title>Sample</title>
 </head>
 <body>
-	<p>
-		<label>
-		  <input class="with-gap" name="group3" type="radio" value="audience" />
-		  <span>Audience</span>
-		</label>
-	</p>
-	<p>
-		<label>
-		  <input class="with-gap" name="group3" type="radio" value="broadcaster" />
-		  <span>Broadcaster</span>
-		</label>
-	</p>
+	<div class="container">
+		<p>
+			<label>
+			  <input class="with-gap" name="group3" type="radio" value="audience" />
+			  <span>Audience</span>
+			</label>
+		</p>
+		<p>
+			<label>
+			  <input class="with-gap" name="group3" type="radio" value="broadcaster" />
+			  <span>Broadcaster</span>
+			</label>
+		</p>
+	
+		<input placeholder="Enter UID: " id="uid" type="text" class="validate">
+	
+		<a id="start" class="waves-effect waves-light btn">Start</a>
+		<a id="stop" class="waves-effect waves-light btn disabled">Stop</a>
+	</div>
 
-	<input placeholder="Enter UID: " id="uid" type="text" class="validate">
-
-	<a id="start" class="waves-effect waves-light btn">Start</a>
-	<a id="stop" class="waves-effect waves-light btn disabled">Stop</a>
+	<h1>Document:</h1>
 	
 	<iframe id="test" width="100%" height="1000px"></iframe>
 
