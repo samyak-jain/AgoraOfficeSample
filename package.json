@@ -8,17 +8,19 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc && webpack js/index.js -o dist/app.bundle.js --mode=production",
     "build:dev": "tsc && webpack js/index.js -o dist/app.bundle.js --mode=development",
-    "start": "ws --spa dist/index.html --port 8080"
+    "start": "ws --spa index.html --port 8080"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "terser": "^4.6.10",
     "typescript": "^3.8.3",
-    "uglify-js": "^3.8.1"
+    "uglify-js": "^3.8.1",
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11"
   },
   "dependencies": {
-    "agora-office": "0.0.5",
+    "agora-office": "0.0.7",
     "agora-rtm-sdk": "^1.2.2"
   }
 }
