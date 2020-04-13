@@ -6,50 +6,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Document</title>
 </head>
-
 <body>
-	<iframe id="test" width="100%"></iframe>
-
-	<script>
-		(async () => {
-			const url = new URL('http://localhost:3000/do?url=https://www.michigan.gov/documents/suite/SEM-0607_557511_7_578596_7.docx');
-			const resp = await fetch(url);
-			if (resp.ok) {
-
-				const textResp = await resp.text();
-
-				const dom = new DOMParser().parseFromString(textResp, "text/html");
-		
-				const base = document.createElement("base");
-				base.setAttribute("href", `${url.protocol}//${url.hostname}${url.port ? ":" + url.port : ""}`);
-				dom.head.appendChild(base);
-				// const script = document.createElement("script");
-				// const scriptContent = document.createTextNode(`
-				// 	const proxied = window.XMLHttpRequest.prototype.open;
-				// 	window.XMLHttpRequest.prototype.open = function() {
-				// 		const urlString = arguments[1];
-				// 		console.log(urlString);
-				// 		const url = new URL(urlString);
-				// 		url.protocol = ${url.protocol};
-				// 		url.hostname = ${url.hostname};
-				// 		url.port = ${url.port};
-				// 		arguments[1] = url.toString();
-				// 		return proxied.apply(this, [].slice.call(arguments));
-				// 	};
-				// `);
-				// script.appendChild(scriptContent);
-				// dom.head.appendChild(script);
-				document.getElementById("test").innerHTML = dom.documentElement.innerHTML;
-				const doc = document.getElementById('test').contentWindow.document;
-				doc.open();
-				doc.write(dom.documentElement.innerHTML);
-				doc.close();
-			}
-			else {
-				console.log("Unable to fetch url")
-			}
-		})()
-	</script>
+	<input type="radio" id="audience" name="role" value="audience">
+	<label for="audience">audience</label><br>
+	<input type="radio" id="broadcaster" name="role" value="broadcaster">
+	<label for="broadcaster">broadcaster</label><br>
+	<iframe id="test" width="100%" height="1000px"></iframe>
+	<script type="text/javascript" src="dist/app.bundle.js"></script>
 </body>
 
 </html>
