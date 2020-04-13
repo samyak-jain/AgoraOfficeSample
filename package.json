@@ -20,7 +20,7 @@
     "webpack-cli": "^3.3.11"
   },
   "dependencies": {
-    "agora-office": "0.0.5",
+    "agora-office": "file:../AgoraOfficeViewer",
     "agora-rtm-sdk": "^1.2.2"
   }
 }
