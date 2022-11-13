@@ -17,7 +17,7 @@
     "typescript": "^3.8.3",
     "uglify-js": "^3.8.1",
     "webpack": "^4.42.1",
-    "webpack-cli": "^3.3.11"
+    "webpack-cli": "^3.3.12"
   },
   "dependencies": {
     "agora-office": "0.0.7",
